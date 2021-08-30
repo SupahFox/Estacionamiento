@@ -12,6 +12,10 @@ package estacionamiento;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 
 public class Estacionamiento {
     
@@ -24,6 +28,10 @@ public class Estacionamiento {
     private static boolean lugares[] = new boolean[13];
     private static Scanner sc = new Scanner(System.in);
     private static int pisocount = 1;
+    private static Date fecha = Calendar.getInstance().getTime();
+    private static DateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    private static String fechade = formato.format(fecha);
+    
     
     public static void main(String[] args) {
     int verde = 0;
@@ -120,7 +128,11 @@ public class Estacionamiento {
     do{
        
        if(pisocount <= 5 && pisocount > 0){
+           
+        piso.setEntrada(fechade);
+        
         System.out.println("Actualmente usted se encuentra en el piso " + pisocount);
+        System.out.println("Fecha de entrada: " + piso.getEntrada());
         System.out.println("Los " + tamaniolugares + " lugares de el piso " + pisocount + " se encuentran disponibles");
         System.out.println("Seleccione su lugar");
         
@@ -132,7 +144,9 @@ public class Estacionamiento {
             }
         }
         if(lugares[lugar] == true){
+        piso.setEstacionado(true);
         System.out.println("Perfecto, te has estacionado en el número " + lugar + "!");
+        System.out.println("Estacionado? : " + piso.getEstacionado());
         
         System.out.println("Deseas salir del lugar seleccionado? (Presiona 1 para salir)");
         op1 = sc.nextInt();
@@ -155,6 +169,10 @@ public class Estacionamiento {
                     System.out.println("¡No existe la opción " + '"' + op1 + '"' + "!");
                     break;
                 case 1:
+                    piso.setSalida(fechade);
+                    piso.setEstacionado(false);
+                    System.out.println("Fecha de salida: " + piso.getSalida());
+                    System.out.println("Estacionado? : " + piso.getEstacionado());
                     pisocount++;
                     piso();
                     break;

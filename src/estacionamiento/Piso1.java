@@ -10,39 +10,29 @@ package estacionamiento;
  * @author usuLab
  */
 public class Piso1 {
-    private boolean control;
     private boolean estacionado;
     private int piso;
-    private boolean entrada;
-    private boolean salida;
+    private String entrada;
+    private String salida;
 
  public Piso1(){
-        this.control = false;
         this.estacionado = false;
         this.piso = 0;
-        this.entrada = false;
-        this.salida = false;
+        this.entrada = "";
+        this.salida = "";
     }
  
  public Piso1(int piso){
         this.piso = piso;
  }
  
- public Piso1(boolean control, boolean estacionado, int piso, boolean entrada, boolean salida){
-        this.control = control;
+ public Piso1(boolean estacionado, int piso, String entrada, String salida){
         this.estacionado = estacionado;
         this.piso = piso;
         this.entrada = entrada;
         this.salida = salida;
  }
  
-    public boolean getControl() {
-        return control;
-    }
-    public void setControl(boolean control) {
-        this.control = control;
-    }
-    
     public boolean getEstacionado() {
         return estacionado;
     }
@@ -57,17 +47,17 @@ public class Piso1 {
         this.piso = piso;
     }
     
-    public boolean getEntrada() {
+    public String getEntrada() {
         return entrada;
     }
-    public void setEntrada(boolean entrada) {
+    public void setEntrada(String entrada) {
         this.entrada = entrada;
     }
     
-    public boolean getSalida() {
+    public String getSalida() {
         return salida;
     }
-    public void setSalida(boolean salida) {
+    public void setSalida(String salida) {
         this.salida = salida;
     }
 }
