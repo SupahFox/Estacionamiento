@@ -19,15 +19,22 @@ import java.text.DateFormat;
 
 public class Estacionamiento {
     
+    //CLASES
     private static Auto auto = new Auto();
     private static Chofer chofer = new Chofer();
-    private static Piso1 piso = new Piso1();
+    private static Piso piso = new Piso();
+    
+    //ARRAYLIST
     private static ArrayList<Auto> autos = new ArrayList();
-    private static ArrayList<Piso1> pisos = new ArrayList();
+    private static ArrayList<Piso> pisos = new ArrayList();
     private static ArrayList<Chofer> ch = new ArrayList();
+    
+    //ARRAYS, SCANNER Y CONTADOR DE PISOS
     private static boolean lugares[] = new boolean[13];
     private static Scanner sc = new Scanner(System.in);
     private static int pisocount = 1;
+    
+    //FECHA
     private static Date fecha = Calendar.getInstance().getTime();
     private static DateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private static String fechade = formato.format(fecha);
