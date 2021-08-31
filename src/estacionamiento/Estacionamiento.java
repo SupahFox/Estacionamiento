@@ -137,10 +137,11 @@ public class Estacionamiento {
        if(pisocount <= 5 && pisocount > 0){
            
         piso.setEntrada(fechade);
+        piso.setPiso(pisocount);
         
-        System.out.println("Actualmente usted se encuentra en el piso " + pisocount);
+        System.out.println("Actualmente usted se encuentra en el piso " + piso.getPiso());
         System.out.println("Fecha de entrada: " + piso.getEntrada());
-        System.out.println("Los " + tamaniolugares + " lugares de el piso " + pisocount + " se encuentran disponibles");
+        System.out.println("Los " + tamaniolugares + " lugares de el piso " + piso.getPiso() + " se encuentran disponibles");
         System.out.println("Seleccione su lugar");
         
         lugar = sc.nextInt();
@@ -199,7 +200,7 @@ public class Estacionamiento {
         
        }
        
-       if(pisocount >5){
+       if(piso.getPiso() >5){
           System.out.println("Actualmente usted no puede subir más pisos");
           
            System.out.println("Seleccione el piso al que quiere bajar");
